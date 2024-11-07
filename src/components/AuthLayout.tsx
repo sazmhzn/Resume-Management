@@ -1,10 +1,14 @@
 // AuthPageLayout.js
-import SubscribeSection from "@/components/SubscriberSection";
+import SubscribeSection from "@/components/common/SubscriberSection";
 import { useState } from "react";
-import { LoginForm, ResetPasswordForm, SignUpForm } from "./AuthForm";
-import Header from "../theme/Header";
+import Header from "@/components/employer/Header";
+import {
+  LoginForm,
+  ResetPasswordForm,
+  SignUpForm,
+} from "@/pages/auth/AuthForm";
 
-const AuthPageLayout = () => {
+const AuthLayout = () => {
   const [formType, setFormType] = useState<"login" | "signup" | "reset">(
     "login"
   );
@@ -33,4 +37,4 @@ const AuthPageLayout = () => {
   );
 };
 
-export default AuthPageLayout;
+export default AuthLayout;

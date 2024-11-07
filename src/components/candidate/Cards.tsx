@@ -1,7 +1,7 @@
 import { Heart, LocateIcon } from "lucide-react";
 
 interface RecentJobCardProps {
-  logoSrc: string;
+  logoSrc?: string;
   position: string;
   location: string;
   type: string;

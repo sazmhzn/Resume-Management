@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { RecentJobCards } from "./components/Cards";
+import { RecentJobCards } from "../../components/candidate/Cards";
 import { Link } from "react-router-dom";
 
 const jobs = [
