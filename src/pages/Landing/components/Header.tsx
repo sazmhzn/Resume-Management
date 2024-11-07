@@ -1,0 +1,131 @@
+import useResponsive from "@/hooks/useResponsive";
+import { Link } from "react-router-dom";
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTrigger,
+} from "@/components/ui/sheet";
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/collapsible";
+import { ChevronDown } from "lucide-react";
+import { menuItems } from "@/utils/menuItems";
+
+const Header = () => {
+  const device = useResponsive();
+
+  return (
+    <header className="sticky top-0 z-10 w-full">
+      <nav className="bg-white py-2.5 dark:bg-gray-900">
+        <div className="flex items-center justify-between max-w-7xl px-4 mx-auto">
+          <Link to="/home" className="inline-flex gap-1 items-center">
+            <img
+              src="./vite.svg"
+              className="h-4 aspect-square sm:h-8"
+              alt="Landwind Logo"
+            />
+            <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
+              Landwind
+            </span>
+          </Link>
+          {device ? (
+            <>
+              <Sheet>
+                <SheetTrigger>Open</SheetTrigger>
+                <SheetContent className="w-1/2">
+                  <SheetHeader>
+                    {/* <SheetTitle>Are you absolutely sure?</SheetTitle> */}
+                    <SheetDescription>
+                      <ul className="m-0 p-0 text-left">
+                        {menuItems.map((item) => (
+                          <li key={item.label} className="p-2 ml-0 relative">
+                            {item.subItems ? (
+                              <Collapsible className="group/collapsible">
+                                <CollapsibleTrigger className="w-full flex items-center">
+                                  {item.label}
+                                  <ChevronDown className="ml-auto transition-transform group-data-[state=open]/collapsible:rotate-180" />
+                                </CollapsibleTrigger>
+                                <CollapsibleContent>
+                                  <ul className="ml-2 p-2 space-y-2">
+                                    {item.subItems.map((subItem) => (
+                                      <li key={subItem.label}>
+                                        <Link to={subItem.link}>
+                                          {subItem.label}
+                                        </Link>
+                                      </li>
+                                    ))}
+                                  </ul>
+                                </CollapsibleContent>
+                              </Collapsible>
+                            ) : (
+                              <Link
+                                to={item.link}
+                                className="text-[#007bff] font-medium"
+                              >
+                                {item.label}
+                              </Link>
+                            )}
+                          </li>
+                        ))}
+                      </ul>
+                    </SheetDescription>
+                  </SheetHeader>
+                </SheetContent>
+              </Sheet>
+            </>
+          ) : (
+            <>
+              <ul className="lg:flex pl-0 mb-0 items-center lg:gap-x-10  md:hidden">
+                {menuItems.map((item) => (
+                  <li key={item.label} className="group relative">
+                    <Link
+                      to={item.link}
+                      className="hover:text-[#007bff] hover:fill-[#007bff] text-gray-600 font-semibold block"
+                    >
+                      {item.label}
+                      {item.subItems && (
+                        <ChevronDown className="ml-1 inline-block" size={16} />
+                      )}
+                    </Link>
+                    {item.subItems && (
+                      <ul className="absolute top-6 max-lg:top-8 left-0 z-50 hidden space-y-2 shadow-lg bg-white max-h-0 overflow-hidden min-w-[250px] group-hover:opacity-100 group-hover:block group-hover:max-h-[700px] px-6 group-hover:pb-4 group-hover:pt-6 transition-all duration-500">
+                        {item.subItems.map((subItem) => (
+                          <li key={subItem.label} className="border-b py-3">
+                            <Link
+                              to={subItem.link}
+                              className="hover:text-[#007bff] hover:fill-[#007bff] text-gray-600 font-semibold text-[15px] block"
+                            >
+                              <subItem.icon
+                                className="mr-4 inline-block"
+                                size={20}
+                              />
+                              {subItem.label}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </li>
+                ))}
+              </ul>
+              <div className="inline-flex items-center">
+                <Link
+                  to="https://themesberg.com/product/tailwind-css/landing-page"
+                  className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0 dark:bg-purple-600 dark:hover:bg-purple-700 focus:outline-none dark:focus:ring-purple-800"
+                >
+                  Hire
+                </Link>
+              </div>
+            </>
+          )}
+        </div>
+      </nav>
+    </header>
+  );
+};
+
+export default Header;
