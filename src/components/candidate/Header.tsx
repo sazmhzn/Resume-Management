@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/collapsible";
 import { ChevronDown } from "lucide-react";
 import { menuItems } from "@/utils/menuItems";
+import { Button } from "../ui/button";
 
 const Header = () => {
   const device = useResponsive();
@@ -112,7 +113,11 @@ const Header = () => {
                   </li>
                 ))}
               </ul>
-              <div className="inline-flex items-center">
+              <div className="inline-flex gap-2 items-center">
+                <Button variant="link" asChild>
+                  <Link to="/my-account"> Sign in </Link>
+                </Button>
+
                 <Link
                   to="https://themesberg.com/product/tailwind-css/landing-page"
                   className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0 dark:bg-purple-600 dark:hover:bg-purple-700 focus:outline-none dark:focus:ring-purple-800"

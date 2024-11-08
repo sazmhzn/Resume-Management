@@ -1,9 +1,11 @@
 import { Heart, LocateIcon } from "lucide-react";
+import { Button } from "../ui/button";
 
 interface RecentJobCardProps {
   logoSrc?: string;
   position: string;
   location: string;
+  company?: string;
   type: string;
   published: string;
   salary: string;
@@ -51,6 +53,49 @@ export const RecentJobCards = ({
           {type}
         </div>
         <h4 className=" text-neutral-900 ">{salary}</h4>{" "}
+      </div>
+    </article>
+  );
+};
+
+export const NewRecentJobCards = ({
+  logoSrc,
+  position,
+  location,
+  type,
+  company,
+}: RecentJobCardProps) => {
+  return (
+    <article className="bg-white h-auto p-4 w-full border-2 rounded-2xl flex flex-col justify-between gap-4">
+      <header className="flex items-start justify-between gap-4">
+        <div className="flex justify-between gap-4 w-full">
+          <div className="w-full space-y-1">
+            <h3 className="text-lg font-bold p-0 m-0 text-gray-800">
+              {position}
+            </h3>
+            <p className="font-semibold">{company}</p>
+          </div>
+          <img
+            src={logoSrc}
+            alt={`${position} logo`}
+            className="aspect-square lg:h-12 h-12 bg-blue-200 rounded-sm p-1"
+          />
+        </div>
+      </header>
+
+      <div className="flex flex-col space-y-4">
+        <div className="flex gap-4 space-y-2">
+          <div className="flex gap-1 text-green-600">
+            <LocateIcon className="" />
+            <span className="m-0 font-semibold">{location}</span>
+          </div>
+          <span className=" m-0 rounded-full px-2 text-green-600 font-semibold">
+            {type}
+          </span>
+        </div>
+        <Button className="rounded-full w-full p-4 bg-gray-800">
+          Apply now
+        </Button>
       </div>
     </article>
   );

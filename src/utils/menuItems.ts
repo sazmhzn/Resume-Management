@@ -3,7 +3,12 @@ import { Home, User, Briefcase, FileText } from "lucide-react";
 export const menuItems = [
   {
     label: "Home",
-    link: "/home",
+    link: "/",
+    icon: Home,
+  },
+  {
+    label: "Find Jobs",
+    link: "/find-Jobs",
     icon: Home,
   },
   {
@@ -13,12 +18,12 @@ export const menuItems = [
     subItems: [
       {
         label: "My Resume",
-        link: "/home/job-profile",
+        link: "/candidate",
         icon: FileText,
       },
       {
-        label: "Jobs",
-        link: "/jobs",
+        label: "Applied Jobs",
+        link: "/candidate/my-jobs",
         icon: Briefcase,
       },
     ],
@@ -30,7 +35,7 @@ export const menuItems = [
     subItems: [
       {
         label: "Post a Job",
-        link: "/post-job",
+        link: "/employer",
         icon: FileText,
       },
       {
@@ -41,8 +46,8 @@ export const menuItems = [
     ],
   },
   {
-    label: "Blogs",
-    link: "/blogs",
+    label: "About",
+    link: "/about",
     icon: FileText,
   },
 ];

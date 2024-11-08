@@ -1,8 +1,6 @@
-import React from "react";
-
 const Footer = () => {
   return (
-    <footer className="font-sans tracking-wide bg-black px-8 py-12">
+    <footer className="font-sans tracking-wide bg-neutral-800 px-8 py-12">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-x-6 gap-y-10">
         <div>
           <a href="javascript:void(0)">
@@ -91,7 +89,7 @@ const Footer = () => {
             </svg>
           </h4>
 
-          <ul className="mt-6 space-y-5">
+          <ul className="m-0 p-0 mt-6 space-y-5">
             <li>
               <a
                 href="javascript:void(0)"
@@ -152,7 +150,7 @@ const Footer = () => {
               />
             </svg>
           </h4>
-          <ul className="space-y-5 mt-6 max-sm:hidden">
+          <ul className="m-0 p-0 space-y-5 mt-6 max-sm:hidden">
             <li>
               <a
                 href="javascript:void(0)"
