@@ -1,5 +1,4 @@
 import { Heart, LocateIcon } from "lucide-react";
-import { Button } from "../ui/button";
 
 interface RecentJobCardProps {
   logoSrc?: string;
@@ -66,7 +65,7 @@ export const NewRecentJobCards = ({
   company,
 }: RecentJobCardProps) => {
   return (
-    <article className="bg-white h-auto p-4 w-full border-2 rounded-2xl flex flex-col justify-between gap-4">
+    <article className="bg-white h-auto px-3 py-3 w-full border rounded-2xl flex flex-col justify-between gap-4">
       <header className="flex items-start justify-between gap-4">
         <div className="flex justify-between gap-4 w-full">
           <div className="w-full space-y-1">
@@ -93,9 +92,6 @@ export const NewRecentJobCards = ({
             {type}
           </span>
         </div>
-        <Button className="rounded-full w-full p-4 bg-gray-800">
-          Apply now
-        </Button>
       </div>
     </article>
   );

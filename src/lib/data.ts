@@ -1,0 +1,178 @@
+export const topRecrutiers = [
+  {
+    companyName: "Periscope",
+    location: "Denmark, DN",
+    jobOpenings: 4,
+    rating: 4,
+    logoUrl: "https://via.placeholder.com/42x42",
+  },
+  {
+    companyName: "NewSum",
+    location: "Holland, HL",
+    jobOpenings: 2,
+    rating: 3,
+    logoUrl: "https://via.placeholder.com/42x42",
+  },
+  {
+    companyName: "PowerHome",
+    location: "Germany, DN",
+    jobOpenings: 2,
+    rating: 1,
+    logoUrl: "https://via.placeholder.com/42x42",
+  },
+  {
+    companyName: "Whop.com",
+    location: "USA, NY",
+    jobOpenings: 5,
+    rating: 5,
+    logoUrl: "https://via.placeholder.com/42x42",
+  },
+  {
+    companyName: "Techify",
+    location: "Canada, ON",
+    jobOpenings: 3,
+    rating: 4,
+    logoUrl: "https://via.placeholder.com/42x42",
+  },
+  {
+    companyName: "BrightMind",
+    location: "UK, London",
+    jobOpenings: 7,
+    rating: 5,
+    logoUrl: "https://via.placeholder.com/42x42",
+  },
+  {
+    companyName: "InnovateX",
+    location: "Japan, Tokyo",
+    jobOpenings: 6,
+    rating: 4,
+    logoUrl: "https://via.placeholder.com/42x42",
+  },
+  {
+    companyName: "EcoWorks",
+    location: "Australia, SY",
+    jobOpenings: 2,
+    rating: 3,
+    logoUrl: "https://via.placeholder.com/42x42",
+  },
+  {
+    companyName: "FutureWave",
+    location: "India, DL",
+    jobOpenings: 8,
+    rating: 5,
+    logoUrl: "https://via.placeholder.com/42x42",
+  },
+  {
+    companyName: "SmartNet",
+    location: "Brazil, SP",
+    jobOpenings: 3,
+    rating: 2,
+    logoUrl: "https://via.placeholder.com/42x42",
+  },
+];
+
+export const jobsData = [
+  {
+    title: "Human Resource",
+    jobsAvailable: 11,
+    imageSrc: "https://via.placeholder.com/42x42",
+    link: "/",
+  },
+  {
+    title: "Engineering",
+    jobsAvailable: 8,
+    imageSrc: "https://via.placeholder.com/42x42",
+    link: "/",
+  },
+  {
+    title: "Marketing",
+    jobsAvailable: 5,
+    imageSrc: "https://via.placeholder.com/42x42",
+    link: "/",
+  },
+  {
+    title: "Design",
+    jobsAvailable: 3,
+    imageSrc: "https://via.placeholder.com/42x42",
+    link: "/",
+  },
+  {
+    title: "Sales",
+    jobsAvailable: 6,
+    imageSrc: "https://via.placeholder.com/42x42",
+    link: "/",
+  },
+  {
+    title: "Finance",
+    jobsAvailable: 4,
+    imageSrc: "https://via.placeholder.com/42x42",
+    link: "/",
+  },
+  {
+    title: "IT Support",
+    jobsAvailable: 7,
+    imageSrc: "https://via.placeholder.com/42x42",
+    link: "/",
+  },
+  {
+    title: "Customer Service",
+    jobsAvailable: 9,
+    imageSrc: "https://via.placeholder.com/42x42",
+    link: "/data/customer",
+  },
+];
+
+export const jobOfTheDay = [
+  {
+    companyName: "Ondo",
+    location: "Holland, HL",
+    position: "DevOps Account Executive - US Pu",
+    jobType: "Part Time",
+    postedDate: "1 month ago",
+    description:
+      "Earum autem ea nihil non. Commodi illo tempora cupiditate magni dolores non omnis consequatur. Alias dolores dolores…",
+    skills: ["Figma", "Lunacy"],
+    salaryInfo: "Sign in to view salary",
+    logoSrc: "https://via.placeholder.com/52x52",
+    link: "/",
+  },
+  {
+    companyName: "Ondo",
+    location: "Holland, HL",
+    position: "DevOps Account Executive - US Pu",
+    jobType: "Part Time",
+    postedDate: "1 month ago",
+    description:
+      "Earum autem ea nihil non. Commodi illo tempora cupiditate magni dolores non omnis consequatur. Alias dolores dolores…",
+    skills: ["Figma", "Lunacy"],
+    salaryInfo: "Sign in to view salary",
+    logoSrc: "https://via.placeholder.com/52x52",
+    link: "/",
+  },
+  {
+    companyName: "Ondo",
+    location: "Holland, HL",
+    position: "DevOps Account Executive - US Pu",
+    jobType: "Part Time",
+    postedDate: "1 month ago",
+    description:
+      "Earum autem ea nihil non. Commodi illo tempora cupiditate magni dolores non omnis consequatur. Alias dolores dolores…",
+    skills: ["Figma", "Lunacy"],
+    salaryInfo: "Sign in to view salary",
+    logoSrc: "https://via.placeholder.com/52x52",
+    link: "/",
+  },
+  {
+    companyName: "Ondo",
+    location: "Holland, HL",
+    position: "DevOps Account Executive - US Pu",
+    jobType: "Part Time",
+    postedDate: "1 month ago",
+    description:
+      "Earum autem ea nihil non. Commodi illo tempora cupiditate magni dolores non omnis consequatur. Alias dolores dolores…",
+    skills: ["Figma", "Lunacy"],
+    salaryInfo: "Sign in to view salary",
+    logoSrc: "https://via.placeholder.com/52x52",
+    link: "/",
+  },
+];

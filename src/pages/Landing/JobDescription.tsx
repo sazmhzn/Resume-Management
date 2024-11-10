@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { RecentJobCards } from "../../components/candidate/Cards";
 import { Link } from "react-router-dom";
+import { CaseLower, LocateIcon } from "lucide-react";
 
 const jobs = [
   {
@@ -28,32 +29,105 @@ const JobDescription = () => {
   return (
     <div>
       {" "}
-      <section className="relative min-h-[40vh] flex items-center justify-center">
-        <div className=" px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl ">
-          <div className=" md:text-center">
-            <div className="md:w-3/5 space-y-4 mx-auto">
-              <h2 className="font-bold text-5xl text-gray-200">
-                Job Description
-              </h2>
+      <section className="bg-blue-50 w-full relative">
+        <div className=" px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl min-h-[40vh] flex">
+          <div className="flex items-center justify-between gap-4 w-full">
+            <div className="flex gap-6">
+              <img
+                // src={logoSrc}
+                alt={` logo`}
+                className="aspect-square lg:h-24 h-16 bg-blue-200 rounded-sm p-1"
+              />
+              <div className="w-full space-y-3">
+                <h3 className="text-2xl font-semibold p-0 m-0 text-gray-800">
+                  UI/UX Position
+                </h3>
+                <div className="space-x-4">
+                  <span>Catalyse</span>
+                  <span>London</span>
+                  <span>Date</span>
+                  <span>Salary</span>
+                </div>
+
+                <div className="space-x-2">
+                  <span className="px-2 py-1 rounded-full bg-green-100 text-green-600 font-normal">
+                    Freelance
+                  </span>
+                  <span className="px-2 py-1 rounded-full bg-green-100 text-green-600 font-normal">
+                    Freelance
+                  </span>
+                  <span className="px-2 py-1 rounded-full bg-green-100 text-green-600 font-normal">
+                    Freelance
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <div className="absolute aspect-auto min-h-[40vh] overflow-hidden -z-10 inset-0">
-          <img
-            className="object-cover w-full h-full md:object-left md:scale-150 md:origin-top-left"
-            src="https://cdn.rareblocks.xyz/collection/celebration/images/cta/5/girl-working-on-laptop.jpg"
-            alt=""
-          />
-        </div>
-
-        <div className="absolute -z-10 inset-0 hidden bg-gradient-to-r md:block from-blue to-transparent" />
       </section>
-      <section className="min-h-[10vh] p-4">
+      <section className="bg-white min-h-[10vh] p-4">
+        <div className="max-w-7xl p-4 mx-auto">
+          <div className=" grid grid-cols-[1fr_300px] gap-6">
+            <div>
+              <h4>Job Description </h4>
+              <p className="text-gray-600">
+                As a Product Designer, you will work within a Product Delivery
+                Team fused with UX, engineering, product and data talent. You
+                will help the team design beautiful interfaces that solve
+                business challenges for our clients. We work with a number of
+                Tier 1 banks on building web-based applications for AML, KYC and
+                Sanctions List management workflows. This role is ideal if you
+                are looking to segue your career into the FinTech or Big Data
+                arenas. Key Responsibilities
+              </p>
+              <h4>Key Responsibilities </h4>
+              <p>
+                Be involved in every step of the product design cycle from
+                discovery to developer handoff and user acceptance testing. Work
+                with BAs, product managers and tech teams to lead the Product
+                Design Maintain quality of the design process and ensure that
+                when designs are translated into code they accurately reflect
+                the design specifications. Accurately estimate design tickets
+                during planning sessions. Contribute to sketching sessions
+                involving non-designersCreate, iterate and maintain UI
+                deliverables including sketch files, style guides, high fidelity
+                prototypes, micro interaction specifications and pattern
+                libraries. Ensure design choices are data led by identifying
+                assumptions to test each sprint, and work with the analysts in
+                your team to plan moderated usability test sessions. Design
+                pixel perfect responsive UI’s and understand that adopting
+                common interface patterns is better for UX than reinventing the
+                wheel Present your work to the wider business at Show & Tell
+                sessions. Skill & Experience You have at least 3 years’
+                experience working as a Product Designer. You have experience
+                using Sketch and InVision or Framer X You have some previous
+                experience working in an agile environment – Think two-week
+                sprints. You are familiar using Jira and Confluence in your
+                workflow
+              </p>
+            </div>
+            <aside className="bg-blue-50 rounded-md p-4">
+              <header>
+                <h4 className="text-neutral-800"> Job Overview</h4>
+              </header>
+
+              <div className="flex items-start gap-2">
+                <CaseLower />
+                <div>
+                  <h4 className="text-lg m-0 p-0">Date Posted:</h4>
+                  <p>Posted: 1 hours ago</p>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+      <section className="bg-white min-h-[10vh] p-4">
         <div className="max-w-7xl p-4 mx-auto">
           <header className="flex justify-between items-center">
             <div className="">
               <p className="text-neutral-700 text-2xl uppercase font-semibold">
-                {jobs.length} JOBS FOUND
+                Related jobs
               </p>
             </div>
 
@@ -64,21 +138,18 @@ const JobDescription = () => {
               </Link>
             </Button>
           </header>
-          <div className="grid md:grid-cols-[1fr_200px] gap-6">
-            <div className="space-y-4">
-              {jobs.map((job, index) => (
-                <RecentJobCards
-                  key={index}
-                  logoSrc={job.logoSrc}
-                  position={job.position}
-                  location={job.location}
-                  type={job.type}
-                  published={job.published}
-                  salary={job.salary}
-                />
-              ))}
-            </div>
-            <div className="bg-white">s</div>
+          <div className=" grid grid-cols-2 gap-6">
+            {jobs.map((job, index) => (
+              <RecentJobCards
+                key={index}
+                logoSrc={job.logoSrc}
+                position={job.position}
+                location={job.location}
+                type={job.type}
+                published={job.published}
+                salary={job.salary}
+              />
+            ))}
           </div>
         </div>
       </section>

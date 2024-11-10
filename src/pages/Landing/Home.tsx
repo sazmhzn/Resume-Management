@@ -1,4 +1,23 @@
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
+import {
+  Form,
+  FormItem,
+  FormLabel,
+  FormControl,
+  FormMessage,
+  FormField,
+} from "@/components/ui/form"; // Replace with your custom form components
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import {
   NewRecentJobCards,
   RecentJobCards,
@@ -50,57 +69,84 @@ const jobs = [
   // Add more job objects as needed
 ];
 
+const JobSearchSchema = z.object({
+  keyword: z.string().min(1, "Company name is required"),
+  industry: z.enum(["IT", "Financial", "MArkting"]),
+  location: z.string().min(1, "Location is required"),
+});
+
 const Home = () => {
+  const form = useForm<z.infer<typeof JobSearchSchema>>({
+    resolver: zodResolver(JobSearchSchema),
+    defaultValues: {
+      keyword: "",
+      industry: "IT",
+      location: "",
+    },
+  });
+
+  const onSubmit = (values: z.infer<typeof JobSearchSchema>) => {
+    console.log("Form submitted:", { ...values });
+  };
   return (
     <>
-      <section className="relative min-h-[80vh] overflow-hidden flex items-center justify-center">
+      <section className="bg-gray-100 relative min-h-[80vh] overflow-hidden flex items-center justify-center">
         <div className=" px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl ">
-          <div className=" md:text-left">
-            <div className="md:w-3/5 space-y-4">
-              <h2 className="text-sm font-medium leading-tight text-white inline rounded bg-blue-600 p-2">
-                Find Jobs, Employement & Career Opportunities
-              </h2>
-              <p className="font-bold text-5xl text-gray-200">
-                Search Between More Then{" "}
-                <span className="text-blue-700"> 50,000 </span>Open Jobs.
-              </p>
-            </div>
-
-            <form action="/" method="POST" className="mt-8 ">
-              <div className="bg-white flex gap-4 p-2 rounded items-center justify-between sm:flex-row sm:justify-center">
-                <input
-                  type="text"
-                  name="title"
-                  id="title"
-                  placeholder="Job Title,keywords, or Phrase"
-                  className="py-3 px-2 w-full placeholder:text-neutral-800 font-semibold shadow-none border-b-2 border-blue-700 active:outline-none focus-within:outline-none"
-                  required
-                />
-
-                <input
-                  placeholder="email"
-                  type="emial"
-                  className="py-3 px-2 w-full placeholder:text-neutral-800 font-semibold shadow-none border-b-2 border-blue-700 active:outline-none focus-within:outline-none"
-                />
-                <input
-                  placeholder="sector"
-                  type="emial"
-                  className="py-3 px-2 shadow-none placeholder:text-neutral-800 font-semibold w-full border-b-2 border-blue-700 active:outline-none focus-within:outline-none"
-                />
-
-                <Button className="inline-flex items-center justify-center flex-shrink-0 w-auto px-4 py-4 font-semibold text-white transition-all duration-200 bg-blue-600 border border-transparent rounded-md sm:mt-0  sm:w-auto hover:bg-blue-700 focus:bg-blue-700">
-                  Find Jobs
-                </Button>
+          <div className="flex">
+            <div className="md:text-left">
+              <div className="space-y-4">
+                <h2 className="text-5xl font-bold leading-tight inline">
+                  The{" "}
+                  <span className="text-blue-600">
+                    {" "}
+                    Easiest Way <br />{" "}
+                  </span>{" "}
+                  to Get Your New Job
+                </h2>
+                <p className="font-normal w-[45ch] text-lg ">
+                  Each month, more than 3 million job seekers turn to website in
+                  their search for work, making over 140,000 applications every
+                  single day
+                </p>
               </div>
-            </form>
+              <div className="w-1/2">
+                <form action="/" method="POST" className="mt-8 ">
+                  <div className="bg-white flex gap-4 p-2 rounded items-center justify-between sm:flex-row sm:justify-center">
+                    <input
+                      type="text"
+                      name="industry"
+                      id="industry"
+                      placeholder="Job Title,keywords, or Phrase"
+                      className="placeholder:text-sm py-3 px-2 w-full placeholder:text-neutral-800 font-semibold shadow-none border-b-2 border-blue-700 active:outline-none focus-within:outline-none"
+                      required
+                    />
+
+                    <input
+                      placeholder="location"
+                      type="text"
+                      className="placeholder:text-sm py-3 px-2 w-full placeholder:text-neutral-800 font-semibold shadow-none border-b-2 border-blue-700 active:outline-none focus-within:outline-none"
+                    />
+                    <input
+                      placeholder="sector"
+                      type="emial"
+                      className="placeholder:text-sm py-3 px-2 shadow-none placeholder:text-neutral-800 font-semibold w-full border-b-2 border-blue-700 active:outline-none focus-within:outline-none"
+                    />
+
+                    <Button className="inline-flex items-center justify-center flex-shrink-0 w-auto px-4 py-4 font-semibold text-white transition-all duration-200 bg-blue-600 border border-transparent rounded-md sm:mt-0  sm:w-auto hover:bg-blue-700 focus:bg-blue-700">
+                      Find Jobs
+                    </Button>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div className="flex-1 bg-red-300 aspect-square min-h-[20vh] overflow-hidden ">
+              <img
+                className="object-cover w-full h-full md:object-left md:scale-150 md:origin-top-left"
+                src="https://cdn.rareblocks.xyz/collection/celebration/images/cta/5/girl-working-on-laptop.jpg"
+                alt=""
+              />
+            </div>
           </div>
-        </div>
-        <div className="absolute bg-red-300 aspect-auto min-h-[80vh] overflow-hidden -z-10 inset-0">
-          <img
-            className="object-cover w-full h-full md:object-left md:scale-150 md:origin-top-left"
-            src="https://cdn.rareblocks.xyz/collection/celebration/images/cta/5/girl-working-on-laptop.jpg"
-            alt=""
-          />
         </div>
 
         <div className="absolute -z-10 inset-0 hidden bg-gradient-to-r md:block from-black to-transparent" />
@@ -141,7 +187,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="min-h-screen">
+      <section className="min-h-screen bg-white">
         <div className="max-w-7xl mx-auto p-4 ">
           <header className="text-center mb-4">
             <h2 className="w-[40ch] mx-auto block leading-10 text-gray-800">

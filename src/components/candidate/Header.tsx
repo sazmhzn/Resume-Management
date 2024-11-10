@@ -21,8 +21,8 @@ const Header = () => {
 
   return (
     <header className="sticky top-0 z-10 w-full">
-      <nav className="bg-white py-2.5 dark:bg-gray-900">
-        <div className="flex items-center justify-between max-w-7xl px-4 mx-auto">
+      <nav className="bg-white p-4 dark:bg-gray-900">
+        <div className="flex items-center justify-between max-w-7xl mx-auto">
           <Link to="/home" className="inline-flex gap-1 items-center">
             <img
               src="./vite.svg"
