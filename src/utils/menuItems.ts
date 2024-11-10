@@ -12,6 +12,40 @@ export const menuItems = [
     icon: Home,
   },
   {
+    label: "Employer(Beta)",
+    link: "#",
+    icon: Briefcase,
+    subItems: [
+      {
+        label: "Post a Job",
+        link: "/employer",
+        icon: FileText,
+      },
+      {
+        label: "Browse Candidates",
+        link: "/browse-candidates",
+        icon: User,
+    },
+    ],
+  },
+  {
+    label: "Recruiters",
+    link: "#",
+    icon: Briefcase,
+    subItems: [
+      {
+        label: "Recruiters",
+        link: "/recruiters",
+        icon: FileText,
+      },
+      {
+        label: "Browse Candidates",
+        link: "/browse-candidates",
+        icon: User,
+      },
+    ],
+  },
+  {
     label: "For Candidate",
     link: "#",
     icon: User,
@@ -28,23 +62,7 @@ export const menuItems = [
       },
     ],
   },
-  {
-    label: "For Employers",
-    link: "#",
-    icon: Briefcase,
-    subItems: [
-      {
-        label: "Post a Job",
-        link: "/employer",
-        icon: FileText,
-      },
-      {
-        label: "Browse Candidates",
-        link: "/browse-candidates",
-        icon: User,
-      },
-    ],
-  },
+
   {
     label: "About",
     link: "/about",

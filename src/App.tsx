@@ -1,7 +1,8 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 // import Home from "./pages/Landing/Home";
-import BrowseJobList from "./pages/Landing/BrowseJobList";
+// import BrowseJobList from "./pages/Landing/BrowseJobList";
+
 import NewLayout from "./pages/theme/NewLayout";
 import AuthLayout from "./components/AuthLayout";
 import Landing from "./components/LandingLayout";
@@ -17,6 +18,9 @@ import PageNotFound from "./pages/shared/PageNotFound";
 import JobDescription from "./pages/Landing/JobDescription";
 import NewHome from "./pages/Landing/NewHome";
 import Jobs from "./pages/Landing/Jobs";
+import Recruiters from "./pages/Landing/Recruiters";
+import RecruiterDetail from "./pages/Landing/RecruiterDetail";
+import JobDetail from "./pages/Landing/JobDetail";
 
 function App() {
   return (
@@ -29,9 +33,12 @@ function App() {
         <Route path="/" element={<Landing />}>
           <Route index element={<NewHome />} />
           <Route path="jobs" element={<Jobs />} />
-          <Route path="find-jobs" element={<BrowseJobList />} />
-          <Route path="browse-jobs" element={<BrowseJobList />} />
-          <Route path="job-description" element={<JobDescription />} />
+          <Route path="job-detail" element={<JobDetail />} />
+          <Route path="recruiters" element={<Recruiters />} />
+          <Route path="recruiter-details" element={<RecruiterDetail />} />
+          {/* <Route path="find-jobs" element={<BrowseJobList />} /> */}
+          {/* <Route path="browse-jobs" element={<BrowseJobList />} /> */}
+          {/* <Route path="job-description" element={<JobDescription />} /> */}
           <Route path="about" element={<About />} />
         </Route>
 

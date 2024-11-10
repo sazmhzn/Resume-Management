@@ -1,6 +1,6 @@
 import { JobCardOfTheDay } from "@/components/common/CustomCard";
 import CustomSearch from "@/components/common/CustomSearch";
-import Heading from "@/components/common/Heading";
+// import Heading from "@/components/common/Heading";
 import { jobOfTheDay } from "@/lib/data";
 
 const Jobs = () => {

@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "../ui/button";
+import { MapPin } from "lucide-react";
+import { StarFilledIcon } from "@radix-ui/react-icons";
 
 interface ValueCardProps {
   title: string;
@@ -93,6 +95,7 @@ export const JobCardOfTheDay = ({
   skills = [],
   salaryInfo = "Sign in to view salary",
   logoSrc = "https://via.placeholder.com/52x52",
+  link,
 }) => {
   return (
     <div className="bg-[#f8faff] rounded-lg border border-[#e0e6f7] p-6 flex flex-col gap-4">
@@ -150,8 +153,16 @@ export const JobCardOfTheDay = ({
       </Link>
 
       {/* Apply Button */}
-      <Button className=" px-6 py-3 bg-[#e0e6f7] rounded text-[#3c65f5] text-xs font-normal font-['Inter'] capitalize">
-        Apply Now
+      <Button
+        asChild
+        className=" px-6 py-3  text-[#3c65f5] text-xs font-normal font-['Inter'] capitalize bg-[#e0e6f7] rounded"
+      >
+        <Link
+          to={link}
+          className=" text-[#3c65f5] text-xs font-normal font-['Inter'] capitalize"
+        >
+          Apply Now
+        </Link>
       </Button>
     </div>
   );
@@ -199,6 +210,63 @@ export const TopRecruiter = ({
           {openings} Opening Jobs
         </div>
       </div>
+    </div>
+  );
+};
+
+export const RecruiterCard = ({ recruiter }) => {
+  return (
+    <div className="w-full max-w-xs p-6 bg-white rounded-lg border border-gray-200 flex flex-col items-center gap-2 hover:border-blue-500 hover:shadow-sm">
+      <img
+        src={recruiter.companyLogo}
+        alt={`${recruiter.companyName} logo`}
+        className="w-16 h-16 aspect-square bg-red-200 rounded-lg"
+      />
+      <h2 className="text-lg m-0 font-bold text-[#05264e]">
+        {recruiter.companyName}
+      </h2>
+
+      {/* Rating and Job Openings */}
+      <div className="flex items-center gap-2">
+        <div className="flex">
+          {[...Array(5)].map((_, index) => (
+            <span
+              key={index}
+              className={
+                index < recruiter.rating ? "text-yellow-500" : "text-gray-300"
+              }
+            >
+              <StarFilledIcon />
+            </span>
+          ))}
+        </div>
+        <span className="text-center text-[#a0abb8] text-xs font-medium font-['Plus Jakarta Sans'] leading-[18px]">
+          ({recruiter.rating})
+        </span>
+      </div>
+
+      <div className="flex items-center gap-1 text-[#a0abb8] text-xs font-normal font-['Plus Jakarta Sans'] leading-normal">
+        <MapPin className="w-4 h-4" /> {recruiter.location}
+      </div>
+
+      {recruiter.jobOpenings > 0 ? (
+        <>
+          <div className="w-full flex justify-center">
+            <span className="text-[#05264e] text-lg font-semibold">
+              {recruiter.jobOpenings} Openings
+            </span>
+          </div>
+          <Button className="bg-blue-600 text-white font-semibold py-2 px-4 rounded mt-2">
+            View Jobs
+          </Button>
+        </>
+      ) : (
+        <div className=" py-[13px] px-3 bg-[#e0e6f7] rounded justify-center items-center inline-flex">
+          <div className="grow shrink basis-0 text-center text-[#05264e] text-sm font-semibold font-['Plus Jakarta Sans'] leading-snug">
+            No Open Job
+          </div>
+        </div>
+      )}
     </div>
   );
 };
