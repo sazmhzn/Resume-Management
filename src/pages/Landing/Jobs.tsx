@@ -1,7 +1,7 @@
-import { JobCardOfTheDay } from "@/components/common/CustomCard";
+import { JobCard, JobCardOfTheDay } from "@/components/common/CustomCard";
 import CustomSearch from "@/components/common/CustomSearch";
 // import Heading from "@/components/common/Heading";
-import { jobOfTheDay } from "@/lib/data";
+import { jobOfTheDay, jobs } from "@/lib/data";
 
 const Jobs = () => {
   return (
@@ -30,14 +30,12 @@ const Jobs = () => {
         </div>
       </section>
 
-      {/* of the day */}
-      <section className="bg-white py-8">
-        <div className="flex  flex-col items-center justify-between max-w-7xl px-0 mx-auto">
-          <div className="flex w-full  flex-col items-center justify-between ">
-            <div className="my-12 px-6 flex-1 relative grid lg:grid-cols-4 md:grid-cols-3 grid-cols-1 content-start gap-4 w-full">
-              {jobOfTheDay &&
-                jobOfTheDay.map((job, index) => <JobCardOfTheDay {...job} />)}
-            </div>
+      <section className="bg-white pt-8 pb-16">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {jobs.map((job, index) => (
+              <JobCard key={index} job={job} />
+            ))}
           </div>
         </div>
       </section>

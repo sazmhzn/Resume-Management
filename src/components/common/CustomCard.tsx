@@ -257,7 +257,9 @@ export const RecruiterCard = ({ recruiter }) => {
             </span>
           </div>
           <Button className="bg-blue-600 text-white font-semibold py-2 px-4 rounded mt-2">
-            View Jobs
+            <Link to={recruiter.link} className="text-white font-semibold">
+              View Jobs
+            </Link>
           </Button>
         </>
       ) : (
@@ -267,6 +269,50 @@ export const RecruiterCard = ({ recruiter }) => {
           </div>
         </div>
       )}
+    </div>
+  );
+};
+
+export const JobCard = ({ job }) => {
+  return (
+    <div className="w-full space-y-4 max-w-sm p-6 bg-[#f8faff] rounded-lg border border-[#e0e6f7] flex flex-col gap-2">
+      <header>
+        <h1 className="m-0 p-0 text-[#05264e] text-base font-bold font-['Plus Jakarta Sans'] leading-relaxed">
+          {job.title}
+        </h1>
+
+        {/* Job Type and Posted Date */}
+        <div className="flex gap-4 text-xs text-[#a0abb8] font-medium">
+          <span>{job.jobType}</span>
+          <span>|</span>
+          <span>{job.postedDate}</span>
+        </div>
+      </header>
+
+      {/* Job Description */}
+      <p className="text-[#4f5e64] line-clamp-3 text-sm font-medium font-['Plus Jakarta Sans'] leading-snug">
+        {job.description}
+      </p>
+
+      {/* Tags */}
+      <div className="flex gap-2">
+        {job.tags.map((tag, index) => (
+          <span
+            key={index}
+            className="px-3 py-1 bg-[#eff3fc] text-xs text-[#4f5e64] rounded"
+          >
+            {tag}
+          </span>
+        ))}
+      </div>
+
+      {/* Apply Button */}
+      <Button
+        asChild
+        className="mt-4 py-2 bg-[#e0e6f7] text-[#3c65f5] text-xs font-semibold rounded w-full"
+      >
+        <Link to={job.link}>Apply Now</Link>
+      </Button>
     </div>
   );
 };

@@ -15,7 +15,7 @@ import EmployerLayout from "./components/EmployerLayout";
 import PostJob from "./pages/employer/JobForm";
 import CompanyProfile from "./pages/employer/CompanyProfile";
 import PageNotFound from "./pages/shared/PageNotFound";
-import JobDescription from "./pages/Landing/JobDescription";
+// import JobDescription from "./pages/Landing/JobDescription";
 import NewHome from "./pages/Landing/NewHome";
 import Jobs from "./pages/Landing/Jobs";
 import Recruiters from "./pages/Landing/Recruiters";
@@ -33,7 +33,7 @@ function App() {
         <Route path="/" element={<Landing />}>
           <Route index element={<NewHome />} />
           <Route path="jobs" element={<Jobs />} />
-          <Route path="job-detail" element={<JobDetail />} />
+          <Route path="job-details" element={<JobDetail />} />
           <Route path="recruiters" element={<Recruiters />} />
           <Route path="recruiter-details" element={<RecruiterDetail />} />
           {/* <Route path="find-jobs" element={<BrowseJobList />} /> */}

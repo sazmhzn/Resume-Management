@@ -219,3 +219,24 @@ export const recruiters = [
     link: "/recruiter-details",
   },
 ];
+
+export const jobs = [
+  {
+    title: "Figma Designer",
+    jobType: "Full Time",
+    postedDate: "2 years ago",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae architecto eveniet, dolor quo repellendus pariatur.",
+    tags: ["App", "Figma", "PSD"],
+    link: "/job-details",
+  },
+  {
+    title: "UI/UX Designer",
+    jobType: "Part Time",
+    postedDate: "1 month ago",
+    description:
+      "Design user-friendly interfaces for our mobile and web applications, ensuring a great user experience.",
+    tags: ["Sketch", "Adobe XD"],
+    link: "/job-details",
+  },
+];
