@@ -1,8 +1,12 @@
+import {
+  JobCardOfTheDay,
+  JobCategoryCard,
+  TopRecruiter,
+} from "@/components/common/CustomCard";
 import Heading from "@/components/common/Heading";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { jobOfTheDay, jobsData, topRecrutiers } from "@/lib/data";
-import { Link } from "react-router-dom";
 
 interface HeroSectionProps {
   heading: string;
@@ -91,140 +95,6 @@ const HeroSection: React.FC<HeroSectionProps> = ({ heading }) => {
         </div>
       </div>
     </section>
-  );
-};
-
-const JobCategoryCard = ({ title, jobsAvailable, imageSrc, link }) => {
-  return (
-    <div className="flex gap-4 p-2 relative bg-white rounded-xl border border-[#061224]/10">
-      <img
-        className="w-[42px] h-[42px] aspect-square "
-        src={imageSrc}
-        alt="Job Icon"
-      />
-      <div className="space-y-2">
-        <div className=" text-[#05264e] text-base font-medium font-['Inter'] leading-tight">
-          <Link to={link}>{title} </Link>
-        </div>
-        <div className="w-[96.89px] h-[18px] left-[71px] top-[49.69px]  text-[#4f5e64] text-xs font-medium font-['Inter'] leading-[18px]">
-          {jobsAvailable} Jobs Available
-        </div>
-      </div>
-    </div>
-  );
-};
-
-const JobCardOfTheDay = ({
-  companyName,
-  location,
-  position,
-  jobType,
-  postedDate,
-  description,
-  skills = [],
-  salaryInfo = "Sign in to view salary",
-  logoSrc = "https://via.placeholder.com/52x52",
-}) => {
-  return (
-    <div className="bg-[#f8faff] rounded-lg border border-[#e0e6f7] p-6 flex flex-col gap-4">
-      {/* Header Section */}
-      <div className="flex items-center gap-4">
-        <img
-          className="w-[52px] h-[52px]"
-          src={logoSrc}
-          alt={`${companyName} logo`}
-        />
-        <div>
-          <div className="text-[#05264e] text-lg font-bold font-['Inter']">
-            {companyName}
-          </div>
-          <div className="text-[#777f87] text-xs font-normal font-['Inter']">
-            {location}
-          </div>
-        </div>
-      </div>
-
-      {/* Position and Job Type */}
-      <div>
-        <div className="text-[#05264e] text-sm font-bold font-['Inter'] leading-tight">
-          {position}
-        </div>
-        <div className="flex gap-4 text-[#777f87] text-xs font-normal font-['Inter'] mt-1">
-          <span>{jobType}</span>
-          <span>{postedDate}</span>
-        </div>
-      </div>
-
-      {/* Description */}
-      <div className="text-[#4f5e64] text-sm font-medium font-['Inter'] line-clamp-3">
-        {description}
-      </div>
-
-      {/* Skills */}
-      <div className="flex gap-2 flex-wrap">
-        {skills.map((skill, index) => (
-          <div
-            key={index}
-            className="px-3 py-1 bg-[#eff3fc] rounded-[5px] text-center text-[#4f5e64] text-xs font-normal font-['Inter'] leading-3"
-          >
-            {skill}
-          </div>
-        ))}
-      </div>
-
-      {/* Salary Information */}
-      <Link
-        to="/my-account"
-        className="m-0 p-0 text-[#3c65f5] text-base font-semibold font-['Inter'] flex items-center gap-1"
-      >
-        {salaryInfo}
-      </Link>
-
-      {/* Apply Button */}
-      <Button className=" px-6 py-3 bg-[#e0e6f7] rounded text-[#3c65f5] text-xs font-normal font-['Inter'] capitalize">
-        Apply Now
-      </Button>
-    </div>
-  );
-};
-
-const TopRecruiter = ({ companyName, location, openings, logoSrc, rating }) => {
-  return (
-    <div className="bg-white rounded-xl border border-[#061224]/10 p-4 flex flex-col justify-between">
-      <div className="flex flex-col items-start gap-2">
-        <img
-          className="w-[42px] h-[42px] rounded-full"
-          src={logoSrc}
-          alt={`${companyName} logo`}
-        />
-        <div>
-          <h3 className="text-[#05264e] text-base font-bold my-1">
-            {companyName}
-          </h3>
-          <div className="flex items-center gap-1 mt-1">
-            {[...Array(5)].map((_, index) => (
-              <div
-                key={index}
-                className={`w-3 h-3 rounded-full ${
-                  index < rating ? "bg-blue-500" : "bg-gray-300"
-                }`}
-              />
-            ))}
-            <span className="text-[#777f87] text-xs font-medium">
-              ({rating})
-            </span>
-          </div>
-        </div>
-      </div>
-      <div className="flex justify-between items-center mt-2">
-        <div className="flex items-center gap-2">
-          <span className="text-[#777f87] text-xs font-normal">{location}</span>
-        </div>
-        <div className="text-[#777f87] text-xs font-normal">
-          {openings} Opening Jobs
-        </div>
-      </div>
-    </div>
   );
 };
 

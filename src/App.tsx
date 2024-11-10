@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-import Home from "./pages/Landing/Home";
+// import Home from "./pages/Landing/Home";
 import BrowseJobList from "./pages/Landing/BrowseJobList";
 import NewLayout from "./pages/theme/NewLayout";
 import AuthLayout from "./components/AuthLayout";
@@ -16,6 +16,7 @@ import CompanyProfile from "./pages/employer/CompanyProfile";
 import PageNotFound from "./pages/shared/PageNotFound";
 import JobDescription from "./pages/Landing/JobDescription";
 import NewHome from "./pages/Landing/NewHome";
+import Jobs from "./pages/Landing/Jobs";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
 
         <Route path="/" element={<Landing />}>
           <Route index element={<NewHome />} />
+          <Route path="jobs" element={<Jobs />} />
           <Route path="find-jobs" element={<BrowseJobList />} />
           <Route path="browse-jobs" element={<BrowseJobList />} />
           <Route path="job-description" element={<JobDescription />} />

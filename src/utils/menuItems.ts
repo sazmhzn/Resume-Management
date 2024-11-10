@@ -8,7 +8,7 @@ export const menuItems = [
   },
   {
     label: "Find Jobs",
-    link: "/find-Jobs",
+    link: "/jobs",
     icon: Home,
   },
   {
