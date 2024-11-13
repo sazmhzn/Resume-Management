@@ -8,7 +8,7 @@ const JobDetail = () => {
       <section className="p-4 bg-white">
         <div className="flex min-h-[20vh] items-center rounded-lg justify-between max-w-7xl px-0 py-10 mx-auto">
           <div className="mx-auto w-full flex flex-col gap-0 md:items-center ">
-            <div className="w-full max-w-[1350px] h-auto flex flex-col items-center -space-y-12">
+            <div className="w-full max-w-[1350px] h-auto flex flex-col gap-4 items-center">
               {/* Image Section */}
               <div className="w-full max-w-[1326px] h-auto flex justify-center items-center">
                 <img
@@ -19,22 +19,17 @@ const JobDetail = () => {
               </div>
 
               {/* Content Section */}
-              <div className="w-full px-8 flex flex-col lg:flex-row items-center -mt-[-50px]">
+              <div className="w-full flex flex-col lg:flex-row items-center">
                 {/* Profile Section */}
                 <div className="flex flex-col items-start space-y-2">
-                  <div className="aspect-square rounded-2xl bg-gray-100 flex items-center justify-center">
-                    <img src="/images/Aceable-inc-logo.svg" alt="logo" />
-                  </div>
-
                   <div className="text-[#05264e] text-lg font-bold font-['Plus Jakarta Sans']">
-                    Aceable, Inc.
+                    Full Stack Engineer
                   </div>
-                  <div className="text-[#a0abb8] text-xs font-normal font-['Plus Jakarta Sans']">
-                    Chicago, US
+                  <div className="flex gap-4 text-xs text-[#a0abb8] font-medium">
+                    <span>Full Time</span>
+                    <span>|</span>
+                    <span>2 month ago</span>
                   </div>
-                  <p className="text-[#66789c] text-base font-normal font-['Plus Jakarta Sans']">
-                    Our Mission to make working life simple
-                  </p>
                 </div>
 
                 {/* Contact Button */}
