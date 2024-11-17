@@ -138,7 +138,7 @@ const Recruiters = () => {
                       {/* Image */}
                       <img
                         className="w-full h-[255px] rounded-lg"
-                        src={post.imgUrl}
+                       src="/images/img-news2.png"
                         alt="Post Image"
                       />
 

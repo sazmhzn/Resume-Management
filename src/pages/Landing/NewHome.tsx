@@ -89,8 +89,9 @@ const HeroSection: React.FC<HeroSectionProps> = ({ heading }) => {
             </div>
           </div>
 
-          <div className="flex-1 md:block hidden bg-red-200 relative">
+          <div className="flex-1 md:block hidden  relative">
             <img className="w-1/2 md:block hidden" src="/images/banner-1.png" />
+            
           </div>
         </div>
       </div>
@@ -207,13 +208,13 @@ const NewHome = () => {
               {/* Main image */}
               <img
                 className="w-[520.8px] bg-red-200 h-[470.05px] rounded-[32px] z-[5]"
-                src="https://via.placeholder.com/521x470"
+                src="/images/img1.png"
                 alt="Main job image"
               />
               {/* Background images */}
               <img
                 className="absolute w-[426px] h-[354px] top-[-70px] left-[-100px] z-0"
-                src="https://via.placeholder.com/426x354"
+                src="/images/banner2.png"
                 alt="Decorative image 1"
               />
             </div>
@@ -261,12 +262,11 @@ const NewHome = () => {
                   level={2}
                   className="text-[#05264e] text-center text-5xl font-bold"
                 >
-                  Browse by Category
+                  Top Recuiter
                 </Heading>
 
                 <div className="text-[#4f5e64] text-lg font-normal font-['Inter'] leading-normal">
-                  Find the job that’s perfect for you. about 800+ new jobs
-                  everyday
+                Discover your next career move, freelance gig, or internship
                 </div>
               </div>
             </div>
@@ -350,7 +350,7 @@ const NewHome = () => {
                       {/* Image */}
                       <img
                         className="w-full h-[255px] rounded-lg"
-                        src={post.imgUrl}
+                        src="/images/img-news1.png"
                         alt="Post Image"
                       />
 

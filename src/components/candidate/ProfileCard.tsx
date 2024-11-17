@@ -52,12 +52,12 @@ export const ProfileCard = () => {
     <div className="  rounded-md  text-black text-center dark:text-gray-500">
       <div className="flex items-center border border-neutral-600 rounded-md flex-col py-4 px-2 bg-white">
         <Avatar className="h-24 w-24 aspect-square">
-          <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+          <AvatarImage src="images/profile.png" alt="@shadcn" />
           <AvatarFallback>WN</AvatarFallback>
         </Avatar>
         <h4 className="mb-0 w-full  text-lg font-semibold">
           {" "}
-          Wonajala Maharjan
+          Wonajala Joshi
         </h4>
         <p className="font-normal">Product Designer</p>
       </div>
@@ -135,12 +135,12 @@ export const EmployerCard = () => {
     <div className="  rounded-md  text-black text-center dark:text-gray-500">
       <div className="flex items-center border border-neutral-600 rounded-md flex-col py-4 px-2 bg-white">
         <Avatar className="h-24 w-24 aspect-square">
-          <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+          <AvatarImage src="images/profile.png" alt="@shadcn" />
           <AvatarFallback>WN</AvatarFallback>
         </Avatar>
         <h4 className="mb-0 w-full  text-lg font-semibold">
           {" "}
-          Wonajala Maharjan
+          Wonajala Joshi
         </h4>
         <p className="font-normal">Product Designer</p>
       </div>

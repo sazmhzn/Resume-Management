@@ -30,7 +30,7 @@ const Header = () => {
               alt="Landwind Logo"
             />
             <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
-              Landwind
+              Job Seeker
             </span>
           </Link>
           {device ? (
