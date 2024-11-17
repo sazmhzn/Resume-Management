@@ -5,7 +5,7 @@ const Footer = () => {
         <div>
           <a href="javascript:void(0)">
             <img
-              src="https://readymadeui.com/readymadeui-white.svg"
+              src="vite.svg"
               alt="logo"
               className="w-44"
             />
